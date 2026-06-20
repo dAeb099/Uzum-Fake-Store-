@@ -22,6 +22,25 @@ const section21 = document.querySelector("#main_section21");
 const section22 = document.querySelector("#main_section22");
 const section23 = document.querySelector("#main_section23");
 const section24 = document.querySelector("#main_section24");
+const main_item = document.querySelectorAll(".main__item");
+
+const swiper = new Swiper(".swiper", {
+  direction: "horizontal",
+  loop: true,
+
+  pagination: {
+    el: ".swiper-pagination",
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});
 
 const products = fetch("https://fakestoreapi.com/products").then((res) =>
   res.json(),
@@ -52,6 +71,30 @@ products.then((fetchedProducts) => {
   const clothingFilter = fetchedProducts.filter(
     (item) => item.category == "men's clothing" || "women's clothing",
   );
+  section1.innerHTML = "";
+  section2.innerHTML = "";
+  section3.innerHTML = "";
+  section4.innerHTML = "";
+  section5.innerHTML = "";
+  section6.innerHTML = "";
+  section7.innerHTML = "";
+  section8.innerHTML = "";
+  section9.innerHTML = "";
+  section10.innerHTML = "";
+  section11.innerHTML = "";
+  section12.innerHTML = "";
+  section13.innerHTML = "";
+  section14.innerHTML = "";
+  section15.innerHTML = "";
+  section16.innerHTML = "";
+  section17.innerHTML = "";
+  section18.innerHTML = "";
+  section19.innerHTML = "";
+  section20.innerHTML = "";
+  section21.innerHTML = "";
+  section22.innerHTML = "";
+  section23.innerHTML = "";
+  section24.innerHTML = "";
   fetchedProducts.forEach((card) => {
     renderCard(
       section1,

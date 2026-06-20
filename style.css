@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +30,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 0 130px;
   padding-top: 20px;
 }
 main h2 {
@@ -35,8 +46,12 @@ a {
 
 .container,
 main {
-  width: 1440px;
+  width: 1180px;
   margin: 0 auto;
+}
+
+.swiper {
+  width: 1180px;
 }
 
 .top {
@@ -44,7 +59,6 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 0 15px;
-  width: 1180px;
   height: 32px;
   background-color: #eee;
 }
@@ -95,7 +109,6 @@ main {
 .header__bottom {
   display: flex;
   align-items: center;
-  padding: 0 130px;
   gap: 30px;
 }
 
@@ -124,6 +137,9 @@ main {
   border: 1px solid #aaa;
   border-radius: 10px;
   padding: 7.5px;
+  background: linear-gradient(-45deg, #fff, #888);
+  background-size: 400% 400%;
+  animation: gradientMove 3s ease infinite;
 }
 
 .item__image {
@@ -147,7 +163,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 0 130px;
   margin-top: 50px;
 }
 
