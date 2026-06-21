@@ -46,10 +46,12 @@ const products = fetch("https://fakestoreapi.com/products").then((res) =>
   res.json(),
 );
 
-const renderCard = (givedSection, title, image, rate, count, price) => {
+const renderCard = (givedSection, title, image, rate, count, price, id) => {
   const shortenedTitle = title.length > 25 ? title.slice(0, 25) + "..." : title;
   givedSection.innerHTML += `
-  <div class="main__item">
+  <div onclick="{
+    window.location.href = './cart/index.html?id=${id}';
+  }" class="main__item">
     <img src="${image}" class="item__image" />
       <p class="item__title">${shortenedTitle}</p>
       <p class="item__rating">
@@ -103,6 +105,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section10,
@@ -111,6 +114,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section24,
@@ -119,6 +123,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
   });
   fetchedProducts.slice(11, 16).forEach((card) => {
@@ -129,6 +134,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section11,
@@ -137,6 +143,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section14,
@@ -145,6 +152,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section18,
@@ -153,6 +161,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section22,
@@ -161,6 +170,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
   });
   fetchedProducts.slice(14, 19).forEach((card) => {
@@ -171,6 +181,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section7,
@@ -179,6 +190,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section13,
@@ -187,6 +199,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section17,
@@ -195,6 +208,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section20,
@@ -203,6 +217,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
   });
   fetchedProducts.slice(3, 8).forEach((card) => {
@@ -213,6 +228,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section6,
@@ -221,6 +237,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section9,
@@ -229,6 +246,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section15,
@@ -237,6 +255,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section19,
@@ -245,6 +264,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section23,
@@ -253,6 +273,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
   });
   electronicsFilter.slice(0, 5).forEach((card) => {
@@ -263,6 +284,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
 
     renderCard(
@@ -272,6 +294,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section12,
@@ -280,6 +303,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section16,
@@ -288,6 +312,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
     renderCard(
       section21,
@@ -296,6 +321,7 @@ products.then((fetchedProducts) => {
       card.rating.rate,
       card.rating.count,
       card.price,
+      card.id,
     );
   });
 });
